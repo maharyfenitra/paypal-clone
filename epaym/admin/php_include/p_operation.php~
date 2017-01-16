@@ -1,0 +1,172 @@
+ <div class="col-md-6">
+                    <!--    Bordered Table  -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Bordered Table
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive table-bordered">
+                            <form method="POST" action ="process.php">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Depot</th>
+                                            <th>---</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+		
+						<td>Pseudo :</td>
+						<td> 
+						<div class="form-group input-group">
+                                            <span class="input-group-addon">@</span>
+                                            <input type="text" class="form-control" placeholder="Pseudo" name ="pseudo">
+                                        </div>
+						
+						</td>
+		
+					</tr>
+					<tr>
+		
+						<td>Somme_:</td>
+						<td> 
+						
+						<div class="form-group input-group">
+                                           		 <span class="input-group-addon">Ar</span>
+                                            		 <input type="text" class="form-control" name ="amount" >
+                                            		 <span class="input-group-addon">.00</span>
+                                        	</div>
+						</td>
+		
+					</tr>
+					<tr>
+						<td>
+							<input type="hidden" name ="action_id" value="2"/>
+						</td>
+						<td>
+							<input type="submit" class="btn btn-default btn-sm" value = "go"/>
+						</td>
+					</tr>
+	
+                                    </tbody>
+                                </table>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                     <!--  End  Bordered Table  -->
+</div>
+<div class="col-md-6">
+                    <!--    Bordered Table  -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Bordered Table
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive table-bordered">
+                            <form method="POST" action ="process.php">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Retrait</th>
+                                            <th>---</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+		
+						<td>Pseudo :</td>
+						<td> 
+						<div class="form-group input-group">
+                                            <span class="input-group-addon">@</span>
+                                            <input type="text" class="form-control" placeholder="Pseudo" name ="pseudo">
+                                        </div>
+						
+						</td>
+		
+					</tr>
+					<tr>
+		
+						<td>Somme_:</td>
+						<td> 
+						
+						<div class="form-group input-group">
+                                           		 <span class="input-group-addon">Ar</span>
+                                            		 <input type="text" class="form-control" name ="amount">
+                                            		 <span class="input-group-addon">.00</span>
+                                        	</div>
+						</td>
+		
+					</tr>
+					<tr>
+						<td>
+							<input type="hidden" name ="action_id" value="3"/>
+						</td>
+						<td>
+							<input type="submit" class="btn btn-default btn-sm" value = "go"/>
+						</td>
+					</tr>
+	
+                                    </tbody>
+                                </table>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                     <!--  End  Bordered Table  -->
+                </div>
+            
+
+<br>
+
+
+<form method="POST" action ="process.php">
+
+<table>
+	<tr>
+		<td>Depot</td><td>---</td>
+	</tr>
+	<tr>
+		
+		<td>Pseudo :</td><td> Somme :</td>
+		
+	</tr>
+	<tr>
+		<td><input type="text" name ="pseudo" /></td><td><input type="text" name ="amount" /></td>
+		
+	</tr>
+	<tr>
+		<td><input type="hidden" name ="action_id" value="2"/></td><td><input type="submit"  value = "go"/></td>
+	</tr>
+
+</table>
+
+
+</form>
+
+<br><br>
+
+<form method="POST" action ="process.php">
+
+<table>
+	<tr>
+		<td>Retrait </td><td>---</td>
+	</tr>
+	<tr>
+		<td>Pseudo :</td><td> Somme :</td>
+		
+	</tr>
+	<tr>
+		<td><input type="text" name ="pseudo" /></td><td><input type="text" name ="amount" /></td>
+		
+	</tr>
+	<tr>
+		<td><input type="hidden" name ="action_id" value="3"/></td><td><input type="submit" value = "go"/></td>
+	</tr>
+
+</table>
+
+</form>

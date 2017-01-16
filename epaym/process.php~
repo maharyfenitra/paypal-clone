@@ -1,0 +1,68 @@
+<?php 
+
+include "config/config.php";
+	if(isset($_POST["action_id"])&&$_POST["action_id"]==0){
+		$check = Customer::checkUser($_POST["email"],$_POST["pseudo"]);
+		echo $check;
+		if($check>0){
+			if($check==1){
+			$_SESSION["id_err_sup"] = 1;
+			$_SESSION["pseudo_er"] = $_POST["pseudo"];
+			$_SESSION["email_er"] = $_POST["email"];
+			$_SESSION["name"] = $_POST["name"];
+			$_SESSION["first_name"] = $_POST["first_name"];
+			header("location:signup.php");
+			}
+			if($check==2){
+			
+			$_SESSION["id_err_sup"] = 2;
+			$_SESSION["pseudo_er"] = $_POST["pseudo"];
+			$_SESSION["email_er"] = $_POST["email"];
+			$_SESSION["name"] = $_POST["name"];
+			$_SESSION["first_name"] = $_POST["first_name"];
+			header("location:signup.php");
+			}
+			if($check==3){
+			$_SESSION["id_err_sup"] = 3;
+			$_SESSION["pseudo_er"] = $_POST["pseudo"];
+			$_SESSION["email_er"] = $_POST["email"];
+			$_SESSION["name"] = $_POST["name"];
+			$_SESSION["first_name"] = $_POST["first_name"];
+			header("location:signup.php");
+			}
+		
+		}else{
+		
+		Customer::newCustomer($_POST["email"],$_POST["pseudo"], $_POST["password"] ,$_POST["name"],$_POST["first_name"] );
+		header("location:home.php");
+		}
+		
+	}
+	if(isset($_POST["action_id"])&&$_POST["action_id"]==1){
+		$c=Customer::getCustomer(null,$_POST["password"],null,$_POST["pseudo"]);
+		
+		if($c){
+			$_SESSION["customer_id"] = $c->getId();
+			header("location:account.php");
+		}
+		else{
+			header("location:connection.php?id_err=1");
+		}
+	}
+	if(isset($_GET["action_id"])&&$_GET["action_id"]==2){
+
+		session_unset ();
+		header("location:home.php");
+	}
+	
+	if(isset($_POST["action_id"])&&$_POST["action_id"]==3){
+		
+		$c2=Customer::getCustomerByPseudo($_POST["pseudo_destinataire"]);
+		if($customer->getPassword()==Tools::gkey($_POST["password"])){
+			Transaction::sendMoney($customer,$c2,$_POST["amount"]);
+			header("location:account.php?success_transaction=1");
+
+		};
+	}
+	
+?>
